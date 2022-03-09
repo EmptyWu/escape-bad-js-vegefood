@@ -8,6 +8,7 @@ axios.get(url)
   .then((res) => {
     data = res.data.filter((a) => a.作物名稱);
     // TODO: 之後拆成 renderData 函式
+    // eslint-disable-next-line no-use-before-define
     const str = renderData(data);
     table.innerHTML = str;
   });
