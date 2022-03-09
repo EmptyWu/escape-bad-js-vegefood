@@ -11,5 +11,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'no-use-before-define': 'off',
+    'eslint-disable-next-line': 'off',
   },
 };
