@@ -1,3 +1,4 @@
+/* global axios */
 // TODO: 修正 ESLint 錯誤、補上分號、前輩說要改單引號 QQ
 const url = 'https://hexschool.github.io/js-filter-data/data.json';
 let data;
@@ -9,8 +10,7 @@ axios.get(url)
     data = res.data.filter((a) => a.作物名稱);
     // TODO: 之後拆成 renderData 函式
     // eslint-disable-next-line no-use-before-define
-    const str = renderData(data);
-    table.innerHTML = str;
+    renderData(data);
   });
 
 let showData = [];
@@ -26,9 +26,7 @@ function filterCategory(e) {
     showData = data.filter((i) => i.種類代碼 === category);
     // TODO: 之後拆成 renderData 函式
 
-    const str = renderData(showData);
-
-    table.innerHTML = str;
+    renderData(showData);
   }
 }
 
@@ -45,5 +43,5 @@ function renderData(Data) {
     }</td></tr>`;
     str += content;
   });
-  return str;
+  table.innerHTML = str;
 }
